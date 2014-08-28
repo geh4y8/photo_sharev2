@@ -1,12 +1,11 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :photos
+
   has_many :tags
   has_many :photos, through: :tags
-
-
   has_many :favorites
   has_many :photos, through: :favorites
+  has_many :photos
 
   validates_uniqueness_of :email
 

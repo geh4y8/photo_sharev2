@@ -8,7 +8,8 @@ class FavoritesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @photo = @user.photos.find(params[:photo_id])
-    @favorite = @photo.favorites.new(favorites_params)
+    @favorite = @photo.favorites.new
+    @favorite.user_id = @user.id
     if @favorite.save
       redirect_to user_photo_path(@user, @photo)
     else
