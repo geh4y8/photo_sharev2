@@ -20,6 +20,11 @@ class PhotosController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @photo = @user.photos.find(params[:id])
+  end
+
 private
   def photo_params
     params.require(:photo).permit(:user_id, :description, :photo)

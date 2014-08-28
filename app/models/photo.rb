@@ -1,7 +1,8 @@
 class Photo < ActiveRecord::Base
   validates :description, presence: :true
 
-  has_and_belongs_to_many :users
+  has_many :tags
+  has_many :users, through: :tags
 
   has_attached_file :photo, :styles => { :small => "150x150>" },
                     :url  => "/assets/products/:id/:style/:basename.:extension",
