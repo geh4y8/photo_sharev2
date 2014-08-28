@@ -4,6 +4,9 @@ class Photo < ActiveRecord::Base
   has_many :tags
   has_many :users, through: :tags
 
+  has_many :favorites
+  has_many :users, through: :favorites
+
   has_attached_file :photo, :styles => { :small => "150x150>" },
                     :url  => "/assets/products/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"

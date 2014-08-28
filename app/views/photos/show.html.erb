@@ -9,3 +9,7 @@
     <li><%= display.email %></li>
   <% end %>
 </ul>
+
+<p><%= link_to "Favorite", user_photo_path(@user, @photo),
+                         :data => { :method => "create"},
+                         :class => "btn btn-danger" %></p>
