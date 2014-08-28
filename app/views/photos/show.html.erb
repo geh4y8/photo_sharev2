@@ -1,0 +1,11 @@
+<h1><%= @photo.description %></h1>
+
+<%= image_tag @photo.photo.url %>
+
+<h2>Tagged people:</h2>
+<ul>
+  <% @photo.tags.each do |tag| %>
+  <% display = User.find(tag.user_id) %>
+    <li><%= display.email %></li>
+  <% end %>
+</ul>
