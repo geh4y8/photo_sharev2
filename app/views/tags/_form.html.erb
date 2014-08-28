@@ -1,0 +1,6 @@
+<%= form_for (@tag), url: user_photo_tags_path(@photo) do |f| %>
+
+  <%= f.collection_select :user_id, User.all, :id, :email %>
+  <%= f.submit("Add Tag", :class => "btn btn-primary") %>
+
+<% end %>

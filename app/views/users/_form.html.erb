@@ -1,0 +1,7 @@
+<%= form_for (@user), :html => { :multipart => true } do |f| %>
+
+  <%= f.file_field :avatar %>
+
+  <%= f.submit("Add Photo", :class => "btn btn-primary") %>
+
+<% end %>

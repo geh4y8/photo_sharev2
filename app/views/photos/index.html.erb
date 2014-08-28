@@ -1,0 +1,6 @@
+<%= @user.email %>
+
+<% @photos.each do |photo| %>
+  <%= image_tag photo.photo.url %>
+  <%= photo.description %>
+<% end %>
