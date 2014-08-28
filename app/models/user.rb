@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :photos, through: :tags
   has_many :photos
 
+
   validates_uniqueness_of :email
 
   has_attached_file :avatar, :styles => { :small => "150x150>" },
